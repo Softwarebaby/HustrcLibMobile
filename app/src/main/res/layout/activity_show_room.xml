@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    tools:context=".activity.ShowRoomActivity">
+    <LinearLayout
+        android:id="@+id/layout_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTitleBar"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="60dp">
+
+            <Button
+                android:id="@+id/title_bar_menu"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/titlebar_menu_selector"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                android:text="阅览室列表"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/roomList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </ListView>
+</LinearLayout>

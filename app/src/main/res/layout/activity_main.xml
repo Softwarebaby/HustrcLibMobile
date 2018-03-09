@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:id="@+id/linear">
+
+        <LinearLayout
+            android:id="@+id/layout_top"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTitleBar"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="60dp">
+
+                <Button
+                    android:id="@+id/title_bar_menu"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/titlebar_menu_selector"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:text="我的订单"
+                    android:textSize="24sp"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"/>
+                <Button
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/refresh_selector"
+                    android:id="@+id/title_bar_refresh"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginLeft="10dp"/>
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/bg"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:id="@+id/noOrder" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="210dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/corners"
+                >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/smile"
+                        android:id="@+id/smile"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/smile"
+                        android:text="还没有占座位哦！"
+                        />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/newOrder"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_bg"
+                android:text="去占座"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"
+                ></Button>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/bg"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:id="@+id/noHttp" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="210dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/corners"
+                >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/network_error"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/reload"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_bg"
+                android:text="重新加载"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"
+                ></Button>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/layout_top"
+            android:background="@drawable/bg"
+            android:visibility="visible"
+            android:orientation="vertical"
+            android:id="@+id/orderInfo" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/corners"
+
+                >
+                <RelativeLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/nameTile"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="姓        名："
+                        android:textSize="18sp"
+                        android:textColor="@android:color/black"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/nameTile"
+                        android:layout_alignBottom="@id/nameTile"
+                        android:id="@+id/name"
+                        android:textSize="18sp"
+
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nameTile"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignLeft="@id/nameTile"
+                        android:id="@+id/useridTitle"
+                        android:textSize="18sp"
+                        android:text="学        号："
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/useridTitle"
+                        android:layout_alignBottom="@id/useridTitle"
+                        android:id="@+id/userid"
+                        android:textSize="18sp"
+
+                        android:textColor="@android:color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/useridTitle"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignLeft="@id/useridTitle"
+                        android:id="@+id/orderidTitle"
+                        android:textSize="18sp"
+                        android:text="订  单  号："
+                        android:textColor="@android:color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/orderidTitle"
+                        android:layout_alignBottom="@id/orderidTitle"
+                        android:id="@+id/orderid"
+                        android:textSize="18sp"
+
+                        android:textColor="@android:color/black" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/orderidTitle"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignLeft="@id/orderidTitle"
+                        android:id="@+id/roomTitle"
+                        android:textSize="18sp"
+                        android:text="阅  览  室："
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/roomTitle"
+                        android:layout_alignBottom="@id/roomTitle"
+                        android:id="@+id/room"
+                        android:textSize="18sp"
+
+                        android:textColor="@android:color/black" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/roomTitle"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignLeft="@id/roomTitle"
+                        android:id="@+id/seatTitle"
+                        android:textSize="18sp"
+                        android:text="座        位："
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/seatTitle"
+                        android:layout_alignBottom="@id/seatTitle"
+                        android:id="@+id/seat"
+                        android:textSize="18sp"
+
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/seatTitle"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignLeft="@id/seatTitle"
+                        android:id="@+id/stimeTitle"
+                        android:textSize="18sp"
+                        android:text="生效时间："
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/stimeTitle"
+                        android:layout_alignBottom="@id/stimeTitle"
+                        android:id="@+id/stime"
+                        android:textSize="18sp"
+
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/stimeTitle"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignLeft="@id/stimeTitle"
+                        android:id="@+id/etimeTitle"
+                        android:textSize="18sp"
+                        android:text="失效时间："
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/etime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/etimeTitle"
+                        android:layout_alignBottom="@id/etimeTitle"
+                        android:layout_toRightOf="@id/etimeTitle"
+
+                        android:textSize="18sp"
+                        android:textColor="@android:color/black" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/etimeTitle"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignLeft="@id/etimeTitle"
+                        android:id="@+id/orderStatusTitle"
+                        android:textSize="18sp"
+                        android:text="订单状态："
+                        android:textColor="@android:color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/orderStatusTitle"
+                        android:layout_alignBottom="@id/orderStatusTitle"
+                        android:id="@+id/orderStatus"
+                        android:textSize="18sp"
+
+                        android:textColor="@android:color/black" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/corners"
+
+                >
+                <RelativeLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/timeTile"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="座位失效倒计时："
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"/>
+                    <TextView
+                        android:id="@+id/daojishiTime"
+                        android:layout_marginTop="55dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="00:00:00"
+                        android:textSize="35sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/cancelseat"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_bg"
+                android:text="取消占座"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"
+                >
+            </Button>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

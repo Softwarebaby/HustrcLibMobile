@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ShowSeatActivity"
+    >
+
+    <LinearLayout
+        android:id="@+id/layout_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTitleBar"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="60dp">
+
+            <Button
+                android:id="@+id/title_bar_menu"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/titlebar_menu_selector"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                android:text="座位情况"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/roomemptyseats_Linear"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/layout_top"
+        android:background="@drawable/bg"
+        android:orientation="vertical"
+        android:visibility="visible"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/corners"
+            >
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:text="阅览室："
+                    android:textSize="18sp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@android:color/black"/>
+                <Spinner
+                    android:id="@+id/roomlist"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/spinner1"
+                    android:prompt="@string/room_Title" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:gravity="right"
+                    android:textSize="18sp"
+                    android:text="座位数："
+                    android:textColor="@android:color/black"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="16sp"
+                    android:text="0"
+                    android:textColor="@android:color/black"
+                    android:id="@+id/seatNums"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/seatselected"
+                    android:gravity="right"
+                    android:paddingLeft="15dip"
+                    android:textSize="16sp"
+                    android:text="  被占"
+                    android:textColor="@android:color/black"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/seatok"
+                    android:gravity="right"
+                    android:paddingLeft="15dip"
+                    android:textSize="16sp"
+                    android:text="  可选"
+                    android:textColor="@android:color/black"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="10dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/corners"
+            >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                >
+                <GridView
+                    android:id="@+id/gridView1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:layout_marginTop="10dip"
+                    android:background="@android:color/transparent"
+                    android:clickable="false"
+                    android:listSelector="@android:color/transparent"
+                    android:numColumns="3" >
+                </GridView>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.OrderSeatActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTitleBar"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="60dp">
+
+            <Button
+                android:id="@+id/title_bar_menu"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/titlebar_menu_selector"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                android:text="预订座位"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/layout_top"
+        android:background="@drawable/bg"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:id="@+id/addorder_Linear"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="210dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/corners"
+            >
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/userIdTitle_seat"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="30dp"
+                    android:text="我的学号："
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:hint="请输入学号    "
+                    android:lines="1"
+                    android:textSize="18dp"
+                    android:layout_toRightOf="@id/userIdTitle_seat"
+                    android:layout_alignBottom="@id/userIdTitle_seat"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@android:color/black"
+                    android:id="@+id/userid_seat"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/stimeTitle_seat"
+                    android:layout_below="@id/userIdTitle_seat"
+                    android:layout_alignLeft="@id/userIdTitle_seat"
+                    android:text="开始时间："
+                    android:textSize="18sp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@android:color/black"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:hint="点击此处选择时间"
+                    android:lines="1"
+                    android:focusable="false"
+
+                    android:textSize="18dp"
+                    android:layout_toRightOf="@id/stimeTitle_seat"
+                    android:layout_alignBottom="@id/stimeTitle_seat"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/stime_seat"
+                    />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etimeTitle_seat"
+                    android:layout_below="@id/stimeTitle_seat"
+                    android:layout_alignLeft="@id/stimeTitle_seat"
+                    android:text="结束时间："
+                    android:textSize="18sp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@android:color/black"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:hint="点击此处选择时间"
+                    android:lines="1"
+                    android:textSize="18dp"
+                    android:layout_toRightOf="@id/etimeTitle_seat"
+                    android:layout_alignBottom="@id/etimeTitle_seat"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/etime_seat"
+                    android:focusable="false"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/roomTitle_seat"
+                    android:layout_below="@id/etimeTitle_seat"
+                    android:layout_alignLeft="@id/etimeTitle_seat"
+                    android:text="阅  览  室："
+                    android:textSize="18sp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@android:color/black"/>
+
+                <Spinner
+                    android:id="@+id/room_seat"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:layout_toRightOf="@+id/roomTitle_seat"
+                    android:layout_alignTop="@+id/roomTitle_seat"
+                    android:background="@drawable/spinner1"
+                    android:prompt="@string/room_Title" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/seatTitle_seat"
+                    android:layout_below="@id/roomTitle_seat"
+                    android:layout_alignLeft="@id/roomTitle_seat"
+                    android:text="座        位："
+                    android:textSize="18sp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@android:color/black"/>
+
+                <Spinner
+                    android:id="@+id/seat_seat"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:layout_toRightOf="@+id/seatTitle_seat"
+                    android:layout_alignTop="@+id/seatTitle_seat"
+                    android:background="@drawable/spinner1"
+                    android:prompt="@string/room_Title" />
+            </RelativeLayout>
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/addOrder"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dip"
+            android:layout_marginTop="20dip"
+            android:background="@drawable/long_selector"
+            android:gravity="center"
+            android:text="占    座"
+            android:textColor="#ffffff"
+            android:textSize="23sp">
+        </Button>
+    </LinearLayout>
+</RelativeLayout>

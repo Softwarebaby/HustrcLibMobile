@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">尚·占座</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="login">登        录</string>
+    <string name="exit">退        出</string>
+    <string name="room_Title">点击此处选择</string>
+</resources>
